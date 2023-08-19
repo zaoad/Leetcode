@@ -1,0 +1,13 @@
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        ans  = 0
+        min  = prices[0]
+        for i, v in enumerate(prices):
+            if v < min:
+                min = v
+            else:
+                if v-min > ans:
+                    ans = v - min
+                    
+        return ans
+        
